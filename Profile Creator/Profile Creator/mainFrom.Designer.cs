@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lstBoxDisplay = new System.Windows.Forms.ListBox();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.lblLocation = new System.Windows.Forms.Label();
-            this.txtBoxUser = new System.Windows.Forms.TextBox();
-            this.cmbBoxLocation = new System.Windows.Forms.ComboBox();
-            this.lblType = new System.Windows.Forms.Label();
-            this.cmbBoxProfleType = new System.Windows.Forms.ComboBox();
             this.chkBoxfullProvision = new System.Windows.Forms.CheckBox();
+            this.cmbBoxProfleType = new System.Windows.Forms.ComboBox();
+            this.lblType = new System.Windows.Forms.Label();
+            this.cmbBoxLocation = new System.Windows.Forms.ComboBox();
+            this.txtBoxUser = new System.Windows.Forms.TextBox();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.lblUser = new System.Windows.Forms.Label();
+            this.lstBoxDisplay = new System.Windows.Forms.ListBox();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatuslbl = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnProceed = new System.Windows.Forms.Button();
@@ -60,56 +60,15 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
-            // lstBoxDisplay
+            // chkBoxfullProvision
             // 
-            this.lstBoxDisplay.FormattingEnabled = true;
-            this.lstBoxDisplay.Location = new System.Drawing.Point(12, 111);
-            this.lstBoxDisplay.Name = "lstBoxDisplay";
-            this.lstBoxDisplay.Size = new System.Drawing.Size(505, 108);
-            this.lstBoxDisplay.TabIndex = 1;
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(6, 16);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(43, 13);
-            this.lblUser.TabIndex = 0;
-            this.lblUser.Text = "User ID";
-            // 
-            // lblLocation
-            // 
-            this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(6, 69);
-            this.lblLocation.Name = "lblLocation";
-            this.lblLocation.Size = new System.Drawing.Size(48, 13);
-            this.lblLocation.TabIndex = 1;
-            this.lblLocation.Text = "Location";
-            // 
-            // txtBoxUser
-            // 
-            this.txtBoxUser.Location = new System.Drawing.Point(61, 12);
-            this.txtBoxUser.Name = "txtBoxUser";
-            this.txtBoxUser.Size = new System.Drawing.Size(90, 20);
-            this.txtBoxUser.TabIndex = 2;
-            // 
-            // cmbBoxLocation
-            // 
-            this.cmbBoxLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbBoxLocation.FormattingEnabled = true;
-            this.cmbBoxLocation.Location = new System.Drawing.Point(61, 66);
-            this.cmbBoxLocation.Name = "cmbBoxLocation";
-            this.cmbBoxLocation.Size = new System.Drawing.Size(151, 21);
-            this.cmbBoxLocation.TabIndex = 3;
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Location = new System.Drawing.Point(6, 42);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(31, 13);
-            this.lblType.TabIndex = 4;
-            this.lblType.Text = "Type";
+            this.chkBoxfullProvision.AutoSize = true;
+            this.chkBoxfullProvision.Location = new System.Drawing.Point(377, 71);
+            this.chkBoxfullProvision.Name = "chkBoxfullProvision";
+            this.chkBoxfullProvision.Size = new System.Drawing.Size(130, 17);
+            this.chkBoxfullProvision.TabIndex = 6;
+            this.chkBoxfullProvision.Text = "Complete Provisioning";
+            this.chkBoxfullProvision.UseVisualStyleBackColor = true;
             // 
             // cmbBoxProfleType
             // 
@@ -120,15 +79,58 @@
             this.cmbBoxProfleType.Size = new System.Drawing.Size(121, 21);
             this.cmbBoxProfleType.TabIndex = 5;
             // 
-            // chkBoxfullProvision
+            // lblType
             // 
-            this.chkBoxfullProvision.AutoSize = true;
-            this.chkBoxfullProvision.Location = new System.Drawing.Point(377, 71);
-            this.chkBoxfullProvision.Name = "chkBoxfullProvision";
-            this.chkBoxfullProvision.Size = new System.Drawing.Size(130, 17);
-            this.chkBoxfullProvision.TabIndex = 6;
-            this.chkBoxfullProvision.Text = "Complete Provisioning";
-            this.chkBoxfullProvision.UseVisualStyleBackColor = true;
+            this.lblType.AutoSize = true;
+            this.lblType.Location = new System.Drawing.Point(6, 42);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(31, 13);
+            this.lblType.TabIndex = 4;
+            this.lblType.Text = "Type";
+            // 
+            // cmbBoxLocation
+            // 
+            this.cmbBoxLocation.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbBoxLocation.FormattingEnabled = true;
+            this.cmbBoxLocation.Location = new System.Drawing.Point(61, 66);
+            this.cmbBoxLocation.Name = "cmbBoxLocation";
+            this.cmbBoxLocation.Size = new System.Drawing.Size(151, 21);
+            this.cmbBoxLocation.TabIndex = 3;
+            this.cmbBoxLocation.SelectedIndexChanged += new System.EventHandler(this.cmbBoxLocation_SelectedIndexChanged);
+            // 
+            // txtBoxUser
+            // 
+            this.txtBoxUser.Location = new System.Drawing.Point(61, 12);
+            this.txtBoxUser.Name = "txtBoxUser";
+            this.txtBoxUser.Size = new System.Drawing.Size(90, 20);
+            this.txtBoxUser.TabIndex = 2;
+            this.txtBoxUser.TextChanged += new System.EventHandler(this.txtBoxUser_TextChanged);
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(6, 69);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(48, 13);
+            this.lblLocation.TabIndex = 1;
+            this.lblLocation.Text = "Location";
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(6, 16);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(43, 13);
+            this.lblUser.TabIndex = 0;
+            this.lblUser.Text = "User ID";
+            // 
+            // lstBoxDisplay
+            // 
+            this.lstBoxDisplay.FormattingEnabled = true;
+            this.lstBoxDisplay.Location = new System.Drawing.Point(12, 111);
+            this.lstBoxDisplay.Name = "lstBoxDisplay";
+            this.lstBoxDisplay.Size = new System.Drawing.Size(505, 108);
+            this.lstBoxDisplay.TabIndex = 1;
             // 
             // statusStrip
             // 

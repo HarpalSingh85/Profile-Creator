@@ -8,19 +8,19 @@ namespace Profile_Creator
 {
     internal class PopulateDefaults
     {
-        private List<string> Location { get; set; }
+        private Dictionary<string,string> Location { get; set; }
         private List<string> ProfileType { get; set; }
 
         public PopulateDefaults()
         {
-            List<string> _location = new List<string>();
+            Dictionary<string,string> _location = new Dictionary<string,string>();
             List<string> _profileType = new List<string>();
-            _location.Add("Swansea");
-            _location.Add("The Hangar - GND Floor");
-            _location.Add("The Base");
-            _location.Add("The VHQ");
-            _location.Add("The Office");
-            _location.Add("LHR LGW maintenance");
+            _location.Add("UK-Swansea", @"\\SVAASWSCCNAS01\Home$\");
+            _location.Add("UK-The Hangar-GND Floor", @"\\SVAALHRHGRNAS01\Home$\");
+            _location.Add("UK-The Base", @"\\svaakntnas596\home1$\");
+            _location.Add("UK-The VHQ",@"\\svaakntnas596\home1$\");
+            _location.Add("UK-The Office", @"\\svaakntnas596\home1$\");
+            _location.Add("UK-LHR LGW maintenance", @"\\SVAALHRATONAS01\Home$\");
 
             _profileType.Add("Roaming Profile");
             _profileType.Add("Local Profile");
@@ -30,7 +30,7 @@ namespace Profile_Creator
             
         }
 
-        public List<string> GetLocation()
+        public Dictionary<string,string> GetLocation()
         {
             return Location;
         }
