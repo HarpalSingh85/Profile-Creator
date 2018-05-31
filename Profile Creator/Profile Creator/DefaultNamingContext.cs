@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.DirectoryServices;
+﻿using System.DirectoryServices;
 
 namespace Profile_Creator
 {    
     public static class DefaultNamingContext
     {
-        internal static string GetDefaultNamingContext()
+        public static string GetDefaultNamingContext()
         {
             string defaultNamingContext;
             using (DirectoryEntry rootDSE = new DirectoryEntry("LDAP://RootDSE"))
@@ -19,6 +14,7 @@ namespace Profile_Creator
 
             return defaultNamingContext;
         }
+        
     }
     
 }
